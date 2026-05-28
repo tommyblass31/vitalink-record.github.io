@@ -1,0 +1,78 @@
+document.addEventListener('DOMContentLoaded', function() {
+    const mensajesAristoteles = [
+        "🎵 Tu música es tu legado, nosotros su estructura.",
+        "✨ Calidad superior, precios inteligentes.",
+        "🔒 Protegemos lo que creas, potenciamos lo que logras.",
+        "🚀 Distribución mundial, derechos asegurados.",
+        "💡 Recuerda: Tú siempre te quedas con el 100% de tus ganancias."
+    ];
+
+    function cambiarMensaje() {
+        const elemento = document.getElementById('mensaje-aristoteles');
+        const aleatorio = mensajesAristoteles[Math.floor(Math.random() * mensajesAristoteles.length)];
+        elemento.textContent = aleatorio;
+    }
+    cambiarMensaje();
+    setInterval(cambiarMensaje, 5000);
+
+    const botonCalculo = document.getElementById('calcular-ganancia');
+    if(botonCalculo) {
+        botonCalculo.addEventListener('click', function() {
+            const montoTotal = parseFloat(document.getElementById('monto-ingreso').value);
+            if(isNaN(montoTotal) || montoTotal <= 0) {
+                alert("Ingresa un monto válido");
+                return;
+            }
+
+            const costoServidor = 7000;
+            const iva = montoTotal * 0.19;
+            const renta = montoTotal * 0.05;
+            const totalImpuestos = iva + renta;
+            const operativos = montoTotal * 0.03;
+            let gananciaNeta = montoTotal - costoServidor - totalImpuestos - operativos;
+            if(gananciaNeta < 0) gananciaNeta = 0;
+
+            document.getElementById('costo-servidor').textContent = `$${costoServidor.toLocaleString('es-CL')}`;
+            document.getElementById('impuestos').textContent = `$${totalImpuestos.toLocaleString('es-CL')}`;
+            document.getElementById('operativos').textContent = `$${operativos.toLocaleString('es-CL')}`;
+            document.getElementById('ganancia-neta').textContent = `$${gananciaNeta.toLocaleString('es-CL')}`;
+            
+            document.getElementById('resultados-calculo').style.display = 'block';
+        });
+    }
+
+    const botonAdmin = document.getElementById('boton-admin');
+    const seccionAdmin = document.getElementById('admin');
+    
+    botonAdmin.addEventListener('click', function(e) {
+        e.preventDefault();
+        const clave = prompt("🔑 INGRESE CÓDIGO DE ACCESO EXCLUSIVO:");
+        if(clave === "VITALINK-2026-SEGURO") {
+            seccionAdmin.classList.toggle('oculto');
+            alert("✅ ACCESO CONCEDIDO. Bienvenido al Panel Central. Sistema blindado activo.");
+            seccionAdmin.scrollIntoView({behavior: 'smooth'});
+        } else {
+            alert("❌ ACCESO DENEGADO. Credenciales inválidas.");
+        }
+    });
+
+    document.querySelector('.formulario').addEventListener('submit', function(e) {
+        e.preventDefault();
+        alert("✅ Solicitud enviada. ARISTÓTELES ha registrado tu petición. Nos contactaremos contigo bajo los estándares de calidad VITALINK.");
+        this.reset();
+    });
+
+    document.querySelectorAll('a[href^="#"]').forEach(link => {
+        link.addEventListener('click', function(e) {
+            e.preventDefault();
+            const destino = document.querySelector(this.getAttribute('href'));
+            if(destino) destino.scrollIntoView({behavior: 'smooth'});
+        });
+    });
+
+    if('serviceWorker' in navigator) {
+        window.addEventListener('load', () => {
+            navigator.serviceWorker.register('/service-worker.js');
+        });
+    }
+});
