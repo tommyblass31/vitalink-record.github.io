@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VITALINK RECORD | Música, Distribución y Marketing</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    // 🎨 ESTILO URBANO Y JUVENIL DEFINITIVO
+                    colors: {
+                        primary: '#0099FF',   // Azul eléctrico brillante
+                        secondary: '#111111', // Negro grafiti
+                        accent: '#FFCC00',    // Amarillo/Dorado resalte
+                        danger: '#FF2222',    // Rojo fuerte como en tu logo
+                        light: '#F0F4F8',     // Gris claro moderno
+                        dark: '#222222',      // Texto oscuro
+                    },
+                    // 🖋️ LETRAS MODERNAS Y JUVENILES
+                    fontFamily: {
+                        sans: ['Montserrat', 'Oswald', 'sans-serif'],
+                    },
+                    boxShadow: {
+                        'neon': '0 0 12px rgba(0, 153, 255, 0.4)',
+                        'neon-yellow': '0 0 12px rgba(255, 204, 0, 0.4)',
+                        'neon-red': '0 0 12px rgba(255, 34, 34, 0.4)',
+                    }
+                }
+            }
+        }
+    </script>
+    <style type="text/tailwindcss">
+        @layer utilities {
+            .content-auto { content-visibility: auto; }
+            .text-shadow { text-shadow: 0 2px 4px rgba(0,0,0,0.3); }
+            .card-hover { @apply transition-all duration-300 hover:shadow-neon hover:-translate-y-1; }
+            .card-hover-accent { @apply transition-all duration-300 hover:shadow-neon-yellow hover:-translate-y-1; }
+            .card-hover-red { @apply transition-all duration-300 hover:shadow-neon-red hover:-translate-y-1; }
+        }
+    </style>
+</head>
+<body class="bg-light font-sans text-dark">
+    <!-- 🧭 BARRA DE NAVEGACIÓN CON TU LOGO -->
+    <nav class="bg-secondary text-white py-3 px-6 md:px-12 fixed w-full z-50 shadow-lg">
+        <div class="container mx-auto flex justify-between items-center">
+            <div class="flex items-center gap-3">
+                <!-- 🖼️ TU LOGO OFICIAL -->
+                <img src="logo-vitalink.png" alt="Vitalink Record" class="h-14 w-auto rounded-full border-2 border-accent shadow-md">
+                <div>
+                    <span class="text-xl font-bold text-accent text-shadow block leading-tight">VITALINK</span>
+                    <span class="text-sm font-medium text-danger leading-tight">RECORD</span>
+                </div>
+            </div>
+            <div class="hidden md:flex gap-8">
+                <a href="#inicio" class="hover:text-accent font-semibold transition">Inicio</a>
+                <a href="#servicios" class="hover:text-accent font-semibold transition">Servicios</a>
+                <a href="#pagos" class="hover:text-accent font-semibold transition">Formas de Pago</a>
+                <a href="#empresa" class="hover:text-accent font-semibold transition">Datos Empresa</a>
+                <a href="#cuentas" class="hover:text-accent font-semibold transition">Cuentas Bancarias</a>
+                <a href="#inteligencias" class="hover:text-accent font-semibold transition">Tecnología</a>
+            </div>
+            <button class="md:hidden text-2xl">
+                <i class="fa fa-bars"></i>
+            </button>
+        </div>
+    </nav>
+
+    <!-- 🚀 SECCIÓN PRINCIPAL -->
+    <section id="inicio" class="pt-32 pb-20 px-6 md:px-12 bg-gradient-to-b from-secondary/5 to-white">
+        <div class="container mx-auto max-w-6xl text-center">
+            <h1 class="text-[clamp(2.8rem,6vw,4.5rem)] font-extrabold text-secondary text-shadow mb-2">VITALINK <span class="text-accent">RECORD</span></h1>
+            <p class="text-[clamp(1.2rem,2.5vw,1.6rem)] text-dark/70 max-w-3xl mx-auto font-medium">Música, Distribución y Marketing al alcance de tu mano</p>
+            <p class="text-lg text-dark/60 mt-2">Tu socio estratégico en la industria musical</p>
+        </div>
+    </section>
+
+    <!-- 📦 SERVICIOS Y PRECIOS -->
+    <section id="servicios" class="py-20 px-6 md:px-12 bg-white">
+        <div class="container mx-auto max-w-6xl">
+            <h2 class="text-3xl md:text-4xl font-bold text-center text-secondary mb-16">Nuestros Servicios y Precios</h2>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
+                <!-- 1. FORMALIZACIÓN -->
+                <div class="bg-gray-50 rounded-xl p-7 border-b-4 border-primary card-hover shadow-md">
+                    <div class="w-16 h-16 bg-primary/10 text-primary rounded-full flex items-center justify-center text-xl mb-5">
+                        <i class="fa fa-shield"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-secondary mb-2">Formalización y Protección</h3>
+                    <div class="mb-4">
+                        <p class="text-2xl font-bold text-primary">$34.900 <span class="text-sm font-normal text-dark/60">básico</span></p>
+                        <p class="text-sm text-dark/70">Complejo: $37.900</p>
+                    </div>
+                    <ul class="space-y-2 text-sm">
+                        <li class="flex items-start gap-2"><i class="fa fa-check text-green-600 mt-1"></i> Registro legal oficial</li>
+                        <li class="flex items-start gap-2"><i class="fa fa-check text-green-600 mt-1"></i> Certificados de propiedad</li>
+                        <li class="flex items-start gap-2"><i class="fa fa-check text-green-600 mt-1"></i> Defensa de derechos</li>
+                        <li class="flex items-start gap-2"><i class="fa fa-check text-green-600 mt-1"></i> Respaldo archivos de por vida</li>
+                    </ul>
+                </div>
+
+                <!-- 2. DISTRIBUCIÓN -->
+                <div class="bg-gray-50 rounded-xl p-7 border-b-4 border-accent card-hover-accent shadow-md">
+                    <div class="w-16 h-16 bg-accent/10 text-accent rounded-full flex items-center justify-center text-xl mb-5">
+                        <i class="fa fa-globe"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-secondary mb-2">Distribución Musical</h3>
+                    <div class="mb-4">
+                        <p class="text-2xl font-bold text-accent">$38.900 <span class="text-sm font-normal text-dark/60">básico</span></p>
+                        <p class="text-sm text-dark/70">Volumen alto: $41.900</p>
+                    </div>
+                    <ul class="space-y-2 text-sm">
+                        <li class="flex items-start gap-2"><i class="fa fa-check text-green-600 mt-1"></i> +150 plataformas mundiales</li>
+                        <li class="flex items-start gap-2"><i class="fa fa-check text-green-600 mt-1"></i> Códigos ISRC y UPC</li>
+                        <li class="flex items-start gap-2"><i class="fa fa-check text-green-600 mt-1"></i> Estadísticas permanentes</li>
+                        <li class="flex items-start gap-2"><i class="fa fa-check text-green-600 mt-1"></i> <strong>100% ganancias para el artista</strong></li>
+                    </ul>
+                </div>
+
+                <!-- 3. MARKETING -->
+                <div class="bg-gray-50 rounded-xl p-7 border-b-4 border-danger card-hover-red shadow-md">
+                    <div class="w-16 h-16 bg-danger/10 text-danger rounded-full flex items-center justify-center text-xl mb-5">
+                        <i class="fa fa-bullhorn"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-secondary mb-2">Marketing y Promoción</h3>
+                    <div class="mb-4">
+                        <p class="text-2xl font-bold text-danger">$43.900 <span class="text-sm font-normal text-dark/60">básico</span></p>
+                        <p class="text-sm text-dark/70">Alcance mayor: $46.900</p>
+                    </div>
+                    <ul class="space-y-2 text-sm">
+                        <li class="flex items-start gap-2"><i class="fa fa-check text-green-600 mt-1"></i> Estrategia personalizada</li>
+                        <li class="flex items-start gap-2"><i class="fa fa-check text-green-600 mt-1"></i> Publicidad dirigida</li>
+                        <li class="flex items-start gap-2"><i class="fa fa-check text-green-600 mt-1"></i> Creación de contenido</li>
+                        <li class="flex items-start gap-2"><i class="fa fa-check text-green-600 mt-1"></i> Informes detallados</li>
+                    </ul>
+                </div>
+
+                <!-- 4. ASESORÍA LEGAL -->
+                <div class="bg-gray-50 rounded-xl p-7 border-b-4 border-primary card-hover shadow-md">
+                    <div class="w-16 h-16 bg-primary/10 text-primary rounded-full flex items-center justify-center text-xl mb-5">
+                        <i class="fa fa-gavel"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-secondary mb-2">Asesoría Legal</h3>
+                    <div class="mb-4">
+                        <p class="text-2xl font-bold text-primary">$35.900 <span class="text-sm font-normal text-dark/60">básico</span></p>
+                        <p class="text-sm text-dark/70">Casos complejos: $38.900</p>
+                    </div>
+                    <ul class="space-y-2 text-sm">
+                        <li class="flex items-start gap-2"><i class="fa fa-check text-green-600 mt-1"></i> Consultas claras</li>
+                        <li class="flex items-start gap-2><i class="fa fa-check text-green-600 mt-1"></i> Explicación normativas</li>
+                        <li class="flex items-start gap-2"><i class="fa fa-check text-green-600 mt-1"></i> Revisión documentos</li>
+                        <li class="flex items-start gap-2"><i class="fa fa-check text-green-600 mt-1"></i> Guía paso a paso</li>
+                    </ul>
+                </div>
+
+                <!-- 5. GESTIÓN DERECHOS -->
+                <div class="bg-gray-50 rounded-xl p-7 border-b-4 border-accent card-hover-accent shadow-md">
+                    <div class="w-16 h-16 bg-accent/10 text-accent rounded-full flex items-center justify-center text-xl mb-5">
+                        <i class="fa fa-money"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-secondary mb-2">Gestión de Derechos y Regalías</h3>
+                    <div class="mb-4">
+                        <p class="text-2xl font-bold text-accent">$36.900 <span class="text-sm font-normal text-dark/60">básico</span></p>
+                        <p class="text-sm text-dark/70">Volumen alto: $39.900</p>
+                    </div>
+                    <ul class="space-y-2 text-sm">
+                        <li class="flex items-start gap-2"><i class="fa fa-check text-green-600 mt-1"></i> Control total de cobros</li>
+                        <li class="flex items-start gap-2"><i class="fa fa-check text-green-600 mt-1"></i> Rendición de cuentas</li>
+                        <li class="flex items-start gap-2"><i class="fa fa-check text-green-600 mt-1"></i> Verificación de pagos</li>
+                        <li class="flex items-start gap-2"><i class="fa fa-check text-green-600 mt-1"></i> Reclamos y gestión</li>
+                    </ul>
+                </div>
+
+                <!-- 🎁 PAQUETE COMPLETO -->
+                <div class="bg-secondary rounded-xl p-7 border-b-4 border-danger card-hover-red shadow-lg text-white">
+                    <div class="w-16 h-16 bg-danger text-white rounded-full flex items-center justify-center text-xl mb-5">
+                        <i class="fa fa-star"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-2">PAQUETE COMPLETO</h3>
+                    <div class="mb-4">
+                        <p class="text-2xl font-bold">$185.500</p>
+                        <p class="text-sm text-white/80">Ahorro de $5.000</p>
+                    </div>
+                    <p class="text-sm text-gray-300 mb-3">Todos los servicios integrados</p>
+                    <ul class="space-y-2 text-sm">
+                        <li class="flex items-start gap-2"><i class="fa fa-check text-accent mt-1"></i> Cobertura total</li>
+                        <li class="flex items-start gap-2"><i class="fa fa-check text-accent mt-1"></i> Prioridad máxima</li>
+                        <li class="flex items-start gap-2"><i class="fa fa-check text-accent mt-1"></i> Beneficios exclusivos</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 💳 SISTEMA DE PAGOS Y REGLAS -->
+    <section id="pagos" class="py-16 px-6 md:px-12 bg-light">
+        <div class="container mx-auto max-w-5xl">
+            <h2 class="text-3xl font-bold text-center text-secondary mb-12">Sistema de Pagos Oficial</h2>
+            
+            <div class="grid md:grid-cols-2 gap-8 mb-8">
+                <div class="bg-white p-7 rounded-xl shadow-md border-l-4 border-red-500">
+                    <h3 class="font-bold text-lg mb-3 flex items-center gap-2"><i class="fa fa-university text-red-500"></i> Transferencia / CuentaRUT / Débito</h3>
+                    <p class="font-semibold text-red-600 mb-2">✅ PAGO ÚNICO Y COMPLETO</p>
+                    <p class="text-dark/70 text-sm">Válido para cualquier servicio. <strong>PROHIBIDO EL PAGO EN CUOTAS</strong> por esta vía. Monto total ingresado de una sola vez.</p>
+                </div>
+
+                <div class="bg-white p-7 rounded-xl shadow-md border-l-4 border-green
