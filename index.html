@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="es-CL">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VITALINK RECORD | Distribución Musical</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#0F172A',
+                        accent: '#2563EB',
+                        neon: '#3B82F6',
+                        dark: '#020617',
+                        light: '#F8FAFC'
+                    },
+                    fontFamily: {
+                        urban: ['Inter', 'system-ui', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+    <style type="text/tailwindcss">
+        @layer utilities {
+            .text-gradient {
+                background-clip: text;
+                -webkit-background-clip: text;
+                color: transparent;
+                background-image: linear-gradient(90deg, #3B82F6, #8B5CF6);
+            }
+            .card-hover {
+                transition: all 0.3s ease;
+            }
+            .card-hover:hover {
+                transform: translateY(-6px);
+                box-shadow: 0 20px 40px rgba(37, 99, 235, 0.15);
+            }
+            .bg-glass {
+                background: rgba(15, 23, 42, 0.7);
+                backdrop-filter: blur(12px);
+                border: 1px solid rgba(255, 255, 255, 0.1);
+            }
+            .logo-vitalink {
+                height: 45px;
+                width: auto;
+                object-fit: contain;
+            }
+        }
+    </style>
+</head>
+<body class="bg-dark text-light font-urban">
+    <!-- HEADER CON LOGO -->
+    <header class="fixed w-full z-50 bg-glass">
+        <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+            <!-- RUTA DEL LOGO CORRECTA: coincide exactamente con tu archivo -->
+            <div class="flex items-center gap-3">
+                <img src="logo-vitalink.png" alt="VITALINK RECORD" class="logo-vitalink">
+                <h2 class="text-xl font-bold">VITALINK RECORD</h2>
+            </div>
+            <nav class="hidden md:flex gap-8 text-sm">
+                <a href="#servicios" class="hover:text-neon transition">Servicios</a>
+                <a href="#paquetes" class="hover:text-neon transition">Paquetes</a>
+                <a href="#personalizado" class="hover:text-neon transition">Paquete Personalizado</a>
+                <a href="#contacto" class="hover:text-neon transition">Contacto</a>
+            </nav>
+            <button class="bg-accent px-5 py-2 rounded-lg text-sm font-medium hover:bg-accent/80 transition">
+                Comenzar
+            </button>
+        </div>
+    </header>
+
+    <!-- HERO -->
+    <section class="min-h-[70vh] flex items-center pt-20 px-4">
+        <div class="container mx-auto text-center">
+            <h1 class="text-[clamp(2.5rem,5vw,4rem)] font-black leading-tight mb-4">
+                LLEVA TU MÚSICA <br>
+                <span class="text-gradient">AL SIGUIENTE NIVEL</span>
+            </h1>
+            <p class="text-gray-400 max-w-2xl mx-auto mb-8 text-lg">
+                Distribución profesional, protección legal y promoción para artistas independientes. Elige lo que necesitas o arma tu propio plan.
+            </p>
+            <div class="flex flex-wrap justify-center gap-4">
+                <a href="#paquetes" class="bg-accent px-8 py-3 rounded-xl font-semibold hover:bg-accent/90 transition">
+                    Ver Paquetes
+                </a>
+                <a href="#personalizado" class="bg-white/10 px-8 py-3 rounded-xl font-semibold hover:bg-white/20 transition">
+                    Crear mi paquete
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- PAQUETES SEPARADOS -->
+    <section id="paquetes" class="py-20 px-4 bg-primary/40">
+        <div class="container mx-auto">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold mb-3">NUESTROS PAQUETES</h2>
+                <p class="text-gray-400 max-w-xl mx-auto">Elige el plan que mejor se adapte a lo que necesitas</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- PAQUETE 1: PROTECCIÓN LEGAL -->
+                <div class="bg-primary p-8 rounded-2xl card-hover border border-white/5 text-center">
+                    <div class="w-16 h-16 rounded-xl bg-accent/20 flex items-center justify-center mx-auto mb-6">
+                        <i class="fa fa-shield text-neon text-3xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-3">Protección Legal</h3>
+                    <p class="text-gray-400 mb-5">Registro oficial de obras, certificados de autoría y respaldo legal completo.</p>
+                    <p class="text-3xl font-black text-neon mb-2">$39.900</p>
+                    <p class="text-gray-500 text-sm mb-6">Pago único</p>
+                    <button class="w-full bg-accent/20 hover:bg-accent/30 text-neon py-3 rounded-xl font-semibold transition">
+                        Contratar
+                    </button>
+                </div>
+
+                <!-- PAQUETE 2: DISTRIBUCIÓN -->
+                <div class="bg-primary p-8 rounded-2xl card-hover border border-white/5 text-center">
+                    <div class="w-16 h-16 rounded-xl bg-accent/20 flex items-center justify-center mx-auto mb-6">
+                        <i class="fa fa-globe text-neon text-3xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-3">Distribución Musical</h3>
+                    <p class="text-gray-400 mb-5">Publicación en +150 plataformas: Spotify, Apple Music, YouTube, TikTok y más.</p>
+                    <p class="text-3xl font-black text-neon mb-2">$44.900</p>
+                    <p class="text-gray-500 text-sm mb-6">Pago único</p>
+                    <button class="w-full bg-accent/20 hover:bg-accent/30 text-neon py-3 rounded-xl font-semibold transition">
+                        Contratar
+                    </button>
+                </div>
+
+                <!-- PAQUETE 3: MARKETING -->
+                <div class="bg-primary p-8 rounded-2xl card-hover border border-white/5 text-center">
+                    <div class="w-16 h-16 rounded-xl bg-accent/20 flex items-center justify-center mx-auto mb-6">
+                        <i class="fa fa-bullhorn text-neon text-3xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-3">Marketing y Promoción</h3>
+                    <p class="text-gray-400 mb-5">Difusión en redes, campañas dirigidas y reportes de impacto real.</p>
+                    <p class="text-3xl font-black text-neon mb-2">$49.900</p>
+                    <p class="text-gray-500 text-sm mb-6">Pago único</p>
+                    <button class="w-full bg-accent/20 hover:bg-accent/30 text-neon py-3 rounded-xl font-semibold transition">
+                        Contratar
+                    </button>
+                </div>
+
+                <!-- PAQUETE 4: ASESORÍA LEGAL -->
+                <div class="bg-primary p-8 rounded-2xl card-hover border border-white/5 text-center">
+                    <div class="w-16 h-16 rounded-xl bg-accent/20 flex items-center justify-center mx-auto mb-6">
+                        <i class="fa fa-balance-scale text-neon text-3xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-3">Asesoría Legal</h3>
+                    <p class="text-gray-400 mb-5">Contratos, defensa de derechos y orientación para evitar problemas legales.</p>
+                    <p class="text-3xl font-black text-neon mb-2">$39.900</p>
+                    <p class="text-gray-500 text-sm mb-6">Pago único</p>
+                    <button class="w-full bg-accent/20 hover:bg-accent/30 text-neon py-3 rounded-xl font-semibold transition">
+                        Contratar
+                    </button>
+                </div>
+
+                <!-- PAQUETE 5: GESTIÓN DE REGALÍAS -->
+                <div class="bg-primary p-8 rounded-2xl card-hover border border-white/5 text-center">
+                    <div class="w-16 h-16 rounded-xl bg-accent/20 flex items-center justify-center mx-auto mb-6">
+                        <i class="fa fa-dollar text-neon text-3xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-3">Gestión de Regalías</h3>
+                    <p class="text-gray-400 mb-5">Cobro mundial, recuperación de ingresos y pagos puntuales cada 3 meses.</p>
+                    <p class="text-3xl font-black text-neon mb-2">$42.900</p>
+                    <p class="text-gray-500 text-sm mb-6">Pago único</p>
+                    <button class="w-full bg-accent/20 hover:bg-accent/30 text-neon py-3 rounded-xl font-semibold transition">
+                        Contratar
+                    </button>
+                </div>
+
+                <!-- PAQUETE COMPLETO -->
+                <div class="bg-gradient-to-br from-primary to-primary/70 rounded-2xl p-1 border border-accent/30 card-hover">
+                    <div class="bg-[#0F172A]/90 rounded-xl p-8 text-center h-full">
+                        <span class="bg-accent/20 text-neon px-4 py-1 rounded-full text-sm font-medium">MÁS ELEGIDO</span>
+                        <h3 class="text-2xl font-bold my-4">Paquete Completo</h3>
+                        <p class="text-gray-400 mb-5">Todos los servicios + inscripción gratuita en SCD/CRIN</p>
+                        <p class="text-3xl font-black text-neon mb-2">$215.000</p>
+                        <p class="text-gray-500 text-sm mb-6">Ahorro total garantizado</p>
+                        <button class="w-full bg-gradient-to-r from-accent to-neon py-3 rounded-xl font-bold text-white hover:opacity-90 transition">
+                            Contratar Todo
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PAQUETE PERSONALIZADO -->
+    <section id="personalizado" class="py-20 px-4">
+        <div class="container mx-auto max-w-4xl">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold mb-3">¿Necesitas algo específico?</h2>
+                <p class="text-gray-400 max-w-xl mx-auto">Crea tu propio paquete eligiendo solo los servicios que vas a usar</p>
+            </div>
+
+            <div class="bg-primary p-8 rounded-2xl border border-white/5">
+                <h3 class="text-2xl font-bold mb-6 text-center">🔧 ARMA TU PAQUETE PERSONALIZADO</h3>
+                <div class="grid md:grid-cols-2 gap-6 mb-8">
+                    <label class="flex items-center gap-3 p-4 bg-white/5 rounded-xl hover:bg-white/10 cursor-pointer transition">
+                        <input type="checkbox" class="w-5 h-5 text-accent rounded border-gray-600">
+                        <span>Protección Legal <span class="text-neon ml-auto">$39.900</span></span>
+                    </label>
+                    <label class="flex items-center gap-3 p-4 bg-white/5 rounded-xl hover:bg-white/10 cursor-pointer transition">
+                        <input type="checkbox" class="w-5 h-5 text-accent rounded border-gray-600">
+                        <span>Distribución Musical <span class="text-neon ml-auto">$44.900</span></span>
+                    </label>
+                    <label class="flex items-center gap-3 p-4 bg-white/5 rounded-xl hover:bg-white/10 cursor-pointer transition">
+                        <input type="checkbox" class="w-5 h-5 text-accent rounded border-gray-600">
+                        <span>Marketing y Promoción <span class="text-neon ml-auto">$49.900</span></span>
+                    </label>
+                    <label class="flex items-center gap-3 p-4 bg-white/5 rounded-xl hover:bg-white/10 cursor-pointer transition">
+                        <input type="checkbox" class="w-5 h-5 text-accent rounded border-gray-600">
+                        <span>Asesoría Legal <span class="text-neon ml-auto">$39.900</span></span>
+                    </label>
+                    <label class="flex items-center gap-3 p-4 bg-white/5 rounded-xl hover:bg-white/10 cursor-pointer transition">
+                        <input type="checkbox" class="w-5 h-5 text-accent rounded border-gray-600">
+                        <span>Gestión de Regalías <span class="text-neon ml-auto">$42.900</span></span>
+                    </label>
+                    <label class="flex items-center gap-3 p-4 bg-white/5 rounded-xl hover:bg-white/10 cursor-pointer transition">
+                        <input type="checkbox" class="w-5 h-5 text-accent rounded border-gray-600">
+                        <span>Inscripción SCD / CRIN <span class="text-neon ml-auto">$15.000</span></span>
+                    </label>
+                </div>
+                <div class="text-center">
+                    <p class="text-xl mb-4">Total estimado: <span class="text-3xl font-bold text-neon">$0</span></p>
+                    <button class="bg-accent px-10 py-3 rounded-xl font-semibold hover:bg-accent/90 transition">
+                        Solicitar mi paquete
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="bg-primary py-8 border-t border-white/5">
+        <div class="container mx-auto px-4 text-center text-sm text-gray-500">
+            <p>VITALINK RECORD SpA | Todos los derechos reservados © 2026</p>
+            <p class="mt-1">Datos oficiales disponibles para consulta legal cuando sea requerido.</p>
+        </div>
+    </footer>
+</body>
+</html>
