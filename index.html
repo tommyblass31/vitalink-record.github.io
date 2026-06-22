@@ -102,6 +102,16 @@
             box-shadow: 0 2px 8px rgba(0,0,0,0.5);
         }
 
+        /* Asegura que todas las imágenes/SVG de iconos tengan el mismo tamaño y se vean bien */
+        .plataforma-icono img,
+        .plataforma-icono svg {
+            width: 36px;
+            height: 36px;
+            object-fit: contain;
+            display: block;
+            color: var(--blanco);
+        }
+
         /* 📦 ESTILO DE SECCIONES */
         .seccion {
             position: relative;
@@ -224,6 +234,8 @@
             .seccion { padding: 45px 25px; min-height: 240px; }
             .logo-principal { width: 200px; }
             .plataforma-icono { width: 48px; height: 48px; font-size: 20px; }
+            .plataforma-icono img,
+            .plataforma-icono svg { width: 28px; height: 28px; }
         }
     </style>
 </head>
@@ -241,12 +253,46 @@
 <header>
     <img src="logo-vitalink-rec.png" alt="Vitalink Record SPA" class="logo-principal">
     <div class="plataformas">
-        <div class="plataforma-icono"><img src="icono-spotify.png" alt="Spotify"></div>
-        <div class="plataforma-icono"><img src="icono-apple-music.png" alt="Apple Music"></div>
-        <div class="plataforma-icono"><img src="icono-tidal.png" alt="Tidal"></div>
-        <div class="plataforma-icono"><img src="icono-youtube-music.png" alt="YouTube Music"></div>
-        <div class="plataforma-icono"><img src="icono-amazon-music.png" alt="Amazon Music"></div>
-        <div class="plataforma-icono"><img src="icono-deezer.png" alt="Deezer"></div>
+        <div class="plataforma-icono" aria-label="Spotify">
+            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
+                <path d="M3 9.5c5-3 13-3.2 18 0" stroke="currentColor" stroke-width="1.6" fill="none" stroke-linecap="round" />
+                <path d="M3 12.5c4.2-2.4 11-2.7 18 0" stroke="currentColor" stroke-width="1.6" fill="none" stroke-linecap="round" />
+                <path d="M3 15.5c3.2-1.8 8-2 13 0" stroke="currentColor" stroke-width="1.6" fill="none" stroke-linecap="round" />
+            </svg>
+        </div>
+        <div class="plataforma-icono" aria-label="Apple Music">
+            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
+                <path d="M12 3v10.55A4 4 0 1 0 14 17V7h4V3h-6z" fill="currentColor" />
+            </svg>
+        </div>
+        <div class="plataforma-icono" aria-label="Tidal">
+            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
+                <polygon points="6,3 12,9 6,15 0,9" fill="currentColor" opacity="0.95" transform="translate(3,1)" />
+                <polygon points="12,3 18,9 12,15 6,9" fill="currentColor" opacity="0.95" transform="translate(3,1)" />
+            </svg>
+        </div>
+        <div class="plataforma-icono" aria-label="YouTube Music">
+            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
+                <path d="M23 7.5a3 3 0 0 0-2.1-2.12C18.9 4.8 12 4.8 12 4.8s-6.9 0-8.9.58A3 3 0 0 0 .99 7.5 31.2 31.2 0 0 0 .99 12a31.2 31.2 0 0 0 1.11 4.5 3 3 0 0 0 2.1 2.12c2 0.58 8.9.58 8.9.58s6.9 0 8.9-.58A3 3 0 0 0 23 16.5 31.2 31.2 0 0 0 24 12a31.2 31.2 0 0 0-1-4.5z" fill="currentColor" />
+                <polygon points="10,9 16,12 10,15" fill="var(--negro-fondo)" />
+            </svg>
+        </div>
+        <div class="plataforma-icono" aria-label="Amazon Music">
+            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
+                <path d="M3 12c3-4 7-6 12-6 1 0 3 .5 4 1-1.5 1-3 1.5-5 1.5-4 0-7 2-11 6 1 0 2-1 3-2z" fill="currentColor" />
+            </svg>
+        </div>
+        <div class="plataforma-icono" aria-label="Deezer">
+            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
+                <g fill="currentColor">
+                    <rect x="2" y="9" width="2" height="6" rx="1" />
+                    <rect x="5" y="7" width="2" height="8" rx="1" />
+                    <rect x="8" y="5" width="2" height="10" rx="1" />
+                    <rect x="11" y="6" width="2" height="9" rx="1" />
+                    <rect x="14" y="9" width="2" height="6" rx="1" />
+                </g>
+            </svg>
+        </div>
     </div>
     <p style="color:#BFBFBF; margin-top:15px; font-size:1.1rem;">Distribución y servicios legales para artistas en Chile</p>
 </header>
