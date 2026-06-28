@@ -82,6 +82,7 @@
             filter: drop-shadow(0 0 12px rgba(255, 213, 0, 0.35));
         }
 
+        /* Estilos para plataformas de distribución */
         .plataformas {
             display: flex;
             justify-content: center;
@@ -115,6 +116,40 @@
         .plataforma-nombre {
             font-size: 1rem;
             font-weight: 500;
+            color: #E0E0E0;
+        }
+
+        /* Estilos para redes sociales */
+        .redes-sociales {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin-top: 30px;
+            flex-wrap: wrap;
+        }
+
+        .red-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 8px;
+            text-align: center;
+            text-decoration: none;
+        }
+
+        .red-icono {
+            width: 65px;
+            height: 65px;
+            object-fit: contain;
+            transition: transform 0.2s ease;
+        }
+
+        .red-icono:hover {
+            transform: scale(1.15);
+        }
+
+        .red-nombre {
+            font-size: 0.9rem;
             color: #E0E0E0;
         }
 
@@ -293,6 +328,14 @@
             font-size: 0.95rem;
         }
 
+        footer {
+            text-align: center;
+            padding: 30px 20px;
+            margin-top: 20px;
+            color: #BFBFBF;
+            font-size: 0.95rem;
+        }
+
         @media (max-width: 768px) {
             .banner-principal { max-height: 220px; border-radius: 8px; }
             h2 { font-size: 1.8rem; }
@@ -301,6 +344,7 @@
             .plataformas { gap: 20px; }
             .plataforma-logo { width: 55px; height: 55px; }
             .plataforma-nombre { font-size: 0.9rem; }
+            .red-icono { width: 55px; height: 55px; }
             .paquetes { grid-template-columns: 1fr; }
         }
     </style>
@@ -340,6 +384,10 @@
             <img src="icono-deezer.png" alt="Deezer" class="plataforma-logo">
             <span class="plataforma-nombre">Deezer</span>
         </div>
+        <div class="plataforma-item">
+            <img src="icono-web.png" alt="Vitalink Plataforma" class="plataforma-logo">
+            <span class="plataforma-nombre">Vitalink</span>
+        </div>
     </div>
     <p style="color:#BFBFBF; margin-top:15px; font-size:1.1rem;">Distribución y servicios legales para artistas en Chile</p>
 </header>
@@ -374,7 +422,7 @@ VITALINK RECORD SPA
 RUT: 78.434.227-1
 Domicilio: Parral, Región del Biobío
 
-El otorgante autoriza expresamente a Vitalink Record SPA para realizar todos los trámites de inscripción de obras, seudónimos, marcas y derechos ante CRIN-DDI, INAPI, SCD y plataformas de distribución musical.
+El otorgante autoriza expresamente a Vitalink Record SPA para realizar todos los trámites de inscripción de obras, seudónimos, nombres artísticos, grupos y derechos ante CRIN-DDI, INAPI, SCD y plataformas de distribución musical.
 
 _________________________          _________________________
 Firma Vitalink Record SPA               Firma del Artista`;
@@ -397,7 +445,7 @@ Firma Vitalink Record SPA               Firma del Artista`;
                 <div class="precio-paquete">$60.000 CLP</div>
                 <ul>
                     <li>Distribución en más de 150 plataformas digitales</li>
-                    <li>Inscripción automática en CRIN-DDI e INAPI</li>
+                    <li>Inscripción de nombre artístico, seudónimo o grupo en CRIN-DDI e INAPI</li>
                     <li>Registro de fonograma en la SCD</li>
                     <li>Revisión profesional de archivos y metadatos</li>
                     <li>Soporte en español, atención desde Chile</li>
@@ -426,7 +474,7 @@ Firma Vitalink Record SPA               Firma del Artista`;
                 <ul>
                     <li>Todos los beneficios del paquete premium</li>
                     <li>Distribución de 5 a 15 canciones</li>
-                    <li>Registro de marca y nombre artístico en INAPI</li>
+                    <li>Registro de marca y protección legal en INAPI</li>
                     <li>Asesoría personalizada y seguimiento completo</li>
                     <li>Posicionamiento destacado en listas de reproducción</li>
                     <li>Documentos legales listos para usar</li>
@@ -503,7 +551,7 @@ Firma Vitalink Record SPA               Firma del Artista`;
                 <h3>Paquete Básico</h3>
                 <div class="precio-paquete">$32.000 CLP</div>
                 <ul>
-                    <li>Registro de nombre artístico en CRIN-DDI</li>
+                    <li>Registro de nombre artístico, seudónimo o grupo en CRIN-DDI</li>
                     <li>Asesoría básica sobre derechos de autor</li>
                     <li>Revisión de documentos simples</li>
                     <li>Emisión de comprobante de trámite</li>
@@ -598,6 +646,41 @@ Firma Vitalink Record SPA               Firma del Artista`;
         <pre id="resultado-mandato"></pre>
     </div>
 </div>
+
+<!-- 🔗 REDES SOCIALES -->
+<div class="seccion" style="background-color: rgba(20,20,20,0.7);">
+    <div class="contenido-seccion">
+        <h2>Síguenos y Contáctanos</h2>
+        <p class="descripcion">Estamos disponibles para resolver tus dudas y atenderte de forma personalizada.</p>
+
+        <div class="redes-sociales">
+            <a href="https://wa.me/TU_NUMERO" class="red-item" target="_blank">
+                <img src="icono-whatsapp.png" alt="WhatsApp" class="red-icono">
+                <span class="red-nombre">WhatsApp</span>
+            </a>
+            <a href="https://instagram.com/TU_USUARIO" class="red-item" target="_blank">
+                <img src="icono-instagram.png" alt="Instagram" class="red-icono">
+                <span class="red-nombre">Instagram</span>
+            </a>
+            <a href="https://facebook.com/TU_PAGINA" class="red-item" target="_blank">
+                <img src="icono-facebook.png" alt="Facebook" class="red-icono">
+                <span class="red-nombre">Facebook</span>
+            </a>
+            <a href="https://tiktok.com/@TU_USUARIO" class="red-item" target="_blank">
+                <img src="icono-tiktok.png" alt="TikTok" class="red-icono">
+                <span class="red-nombre">TikTok</span>
+            </a>
+            <a href="https://vitalink.cl" class="red-item" target="_blank">
+                <img src="icono-web.png" alt="Sitio Web" class="red-icono">
+                <span class="red-nombre">vitalink.cl</span>
+            </a>
+        </div>
+    </div>
+</div>
+
+<footer>
+    © 2026 Vitalink Record SPA • Parral, Región del Biobío • Chile
+</footer>
 
 </div>
 
