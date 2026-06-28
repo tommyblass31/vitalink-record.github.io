@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -41,7 +42,7 @@
             width: 100%;
             height: 100%;
             z-index: 0;
-            background: url('./fondo-pintura.jpg') center / cover no-repeat;
+            background: url('fondo-pintura.jpg') center / cover no-repeat;
             opacity: 0.9;
         }
 
@@ -53,19 +54,16 @@
             z-index: 2;
         }
 
-        /* 🖼️ BANNER PRINCIPAL - FULL BLEED */
+        /* 🖼️ BANNER PRINCIPAL */
         .banner-principal {
-            display: block;                 /* evita espacio en línea */
-            width: 100vw;                   /* ocupa todo el ancho del viewport */
-            max-width: 100vw;
-            height: auto;                   /* mantiene la proporción — NO distorsiona */
-            margin-left: calc(50% - 50vw);  /* centra la imagen full-bleed */
-            margin-right: calc(50% - 50vw);
-            object-fit: contain;            /* muestra la imagen completa sin recortar */
-            border-radius: 12px;            /* conserva esquinas redondeadas como en tu ejemplo */
+            display: block;
+            width: 100%;
+            max-height: 350px;
+            object-fit: cover;
+            border-radius: 14px;
             margin-bottom: 40px;
-            box-shadow: none;               /* quita la sombra para coincidir con el ejemplo */
-            border: 1px solid rgba(0,0,0,0.45); /* borde sutil oscuro como en la imagen de referencia */
+            box-shadow: 0 6px 20px rgba(0,0,0,0.7);
+            border: 1px solid rgba(255, 213, 0, 0.15);
         }
 
         /* 🎯 ENCABEZADO CON LOGO */
@@ -76,40 +74,46 @@
         }
 
         .logo-principal {
-            width: 320px;
+            width: 280px;
             height: auto;
             margin-bottom: 25px;
             filter: drop-shadow(0 0 12px rgba(255, 213, 0, 0.35));
         }
 
+        /* ✅ ICONOS MÁS GRANDES */
         .plataformas {
             display: flex;
             justify-content: center;
-            gap: 30px;
-            margin-top: 20px;
+            gap: 35px;
+            margin-top: 25px;
             flex-wrap: wrap;
-            align-items: flex-start;
+            align-items: center;
         }
 
         .plataforma-item {
             display: flex;
             flex-direction: column;
             align-items: center;
-            gap: 12px;
+            gap: 10px;
             text-align: center;
         }
 
         .plataforma-logo {
-            width: 120px;
-            height: auto;
+            width: 75px;
+            height: 75px;
             object-fit: contain;
             display: block;
             filter: drop-shadow(0 2px 8px rgba(0,0,0,0.5));
+            transition: transform 0.2s ease;
+        }
+
+        .plataforma-logo:hover {
+            transform: scale(1.1);
         }
 
         .plataforma-nombre {
-            font-size: 0.95rem;
-            font-weight: 600;
+            font-size: 1rem;
+            font-weight: 500;
             color: #E0E0E0;
         }
 
@@ -230,51 +234,50 @@
 
         /* 📱 ADAPTACIÓN A CELULAR */
         @media (max-width: 768px) {
-            .banner-principal { max-height: 220px; border-radius: 8px; }
+            .banner-principal { max-height: 220px; }
             h2 { font-size: 1.8rem; }
             .seccion { padding: 45px 25px; min-height: 240px; }
-            .logo-principal { width: 240px; }
+            .logo-principal { width: 220px; }
             .plataformas { gap: 20px; }
-            .plataforma-logo { width: 80px; }
-            .plataforma-nombre { font-size: 0.85rem; }
+            .plataforma-logo { width: 55px; height: 55px; }
+            .plataforma-nombre { font-size: 0.9rem; }
         }
     </style>
 </head>
 <body>
 
 <div class="fondo-principal"></div>
-
-<!-- Muevo el banner fuera del contenedor para asegurar que el ancho coincida exactamente con el viewport -->
-<img src="./banner-principal.jpg" alt="Vitalink Record SPA" class="banner-principal">
-
 <div class="contenedor">
+
+<!-- 🖼️ BANNER PRINCIPAL -->
+<img src="banner-principal.jpg" alt="Vitalink Record SPA" class="banner-principal">
 
 <!-- 🎯 LOGO Y PLATAFORMAS -->
 <header>
-    <img src="./logo-vitalink-rec.png" alt="Vitalink Record SPA" class="logo-principal">
+    <img src="logo-vitalink-rec.png" alt="Vitalink Record SPA" class="logo-principal">
     <div class="plataformas">
         <div class="plataforma-item">
-            <img src="./logo-spotify.png" alt="Spotify" class="plataforma-logo">
+            <img src="icono-spotify.png" alt="Spotify" class="plataforma-logo">
             <span class="plataforma-nombre">Spotify</span>
         </div>
         <div class="plataforma-item">
-            <img src="./logo-apple-music.png" alt="Apple Music" class="plataforma-logo">
+            <img src="icono-apple-music.png" alt="Apple Music" class="plataforma-logo">
             <span class="plataforma-nombre">Apple Music</span>
         </div>
         <div class="plataforma-item">
-            <img src="./logo-tidal.png" alt="Tidal" class="plataforma-logo">
+            <img src="icono-tidal.png" alt="Tidal" class="plataforma-logo">
             <span class="plataforma-nombre">Tidal</span>
         </div>
         <div class="plataforma-item">
-            <img src="./logo-youtube-music.png" alt="YouTube Music" class="plataforma-logo">
+            <img src="icono-youtube-music.png" alt="YouTube Music" class="plataforma-logo">
             <span class="plataforma-nombre">YouTube Music</span>
         </div>
         <div class="plataforma-item">
-            <img src="./logo-amazon-music.png" alt="Amazon Music" class="plataforma-logo">
+            <img src="icono-amazon-music.png" alt="Amazon Music" class="plataforma-logo">
             <span class="plataforma-nombre">Amazon Music</span>
         </div>
         <div class="plataforma-item">
-            <img src="./logo-deezer.png" alt="Deezer" class="plataforma-logo">
+            <img src="icono-deezer.png" alt="Deezer" class="plataforma-logo">
             <span class="plataforma-nombre">Deezer</span>
         </div>
     </div>
@@ -282,14 +285,14 @@
 </header>
 
 <script>
-// 📁 NOMBRES DE IMÁGENES DEFINIDOS EN EL CÓDIGO
+// 📁 RUTAS DE IMÁGENES
 const galerias = {
-    distribucion: ["./fondo-distribucion.jpg"],
-    marketing: ["./fondo-marketing.jpg"],
-    legal: ["./fondo-legal.jpg"]
+    distribucion: ["fondo-distribucion.jpg"],
+    marketing: ["fondo-marketing.jpg"],
+    legal: ["fondo-legal.jpg"]
 };
 
-// 🌀 CARGAR IMÁGENES EN CADA SECCIÓN
+// 🌀 CARGAR IMÁGENES DE FONDO
 function cargarFondo(id, archivo) {
     const elemento = document.getElementById(id);
     if (elemento) elemento.style.backgroundImage = `url('${archivo}')`;
@@ -313,7 +316,7 @@ VITALINK RECORD SPA
 RUT: 78.434.227-1
 Domicilio: Parral, Región del Biobío
 
-El otorgante autoriza expresamente a Vitalink Record SPA para realizar todos los trámites de inscripción de obras, seudónimos, marcas y derechos ante CRIN-DDI, INAPI, SCD y plataformas de distribuc[...]
+El otorgante autoriza expresamente a Vitalink Record SPA para realizar todos los trámites de inscripción de obras, seudónimos, marcas y derechos ante CRIN-DDI, INAPI, SCD y plataformas de distribución musical. Los montos cobrados son 100% deducibles ante el Servicio de Impuestos Internos.
 
 _________________________          _________________________
 Firma Vitalink Record SPA               Firma del Artista`;
@@ -328,7 +331,7 @@ Firma Vitalink Record SPA               Firma del Artista`;
     <div class="capa-sombra"></div>
     <div class="contenido-seccion">
         <h2>Distribución Digital</h2>
-        <p class="descripcion">Sube tu música a más de 150 plataformas: Spotify, Apple Music, YouTube Music, TikTok, Instagram y Deezer. Incluye códigos ISRC, informes de regalías y soporte perman[...]
+        <p class="descripcion">Sube tu música a más de 150 plataformas: Spotify, Apple Music, YouTube Music, TikTok, Instagram y Deezer. Incluye códigos ISRC, informes detallados de regalías y soporte permanente.</p>
         <p class="precio">$0 de entrada | Comisión 18% sobre ingresos</p>
         <p class="formas-pago">Formas de pago: Descuento de regalías • Transferencia BancoEstado</p>
     </div>
@@ -338,49 +341,4 @@ Firma Vitalink Record SPA               Firma del Artista`;
 <div class="seccion">
     <div class="fondo-seccion" id="fondo-marketing"></div>
     <div class="capa-sombra"></div>
-    <div class="contenido-seccion">
-        <h2>Marketing y Difusión</h2>
-        <p class="descripcion">Campañas de promoción, creación de contenido, difusión en redes sociales y estrategias para aumentar tus reproducciones y seguidores.</p>
-        <p class="precio">Desde $45.000 CLP</p>
-        <p class="formas-pago">Formas de pago: Transferencia • Tarjeta • Descuento de regalías</p>
-    </div>
-</div>
-
-<!-- 🛡️ SECCIÓN: PROTECCIÓN LEGAL -->
-<div class="seccion">
-    <div class="fondo-seccion" id="fondo-legal"></div>
-    <div class="capa-sombra"></div>
-    <div class="contenido-seccion">
-        <h2>Protección Legal</h2>
-        <p class="descripcion">Registro de nombre artístico en CRIN, inscripción de fonogramas, marcas comerciales en INAPI y representación ante entidades de derechos de autor en Chile.</p>
-        <p class="precio">Desde $30.500 CLP | 100% deducible</p>
-        <p class="formas-pago">Formas de pago: Transferencia • Tarjeta • Descuento de regalías</p>
-    </div>
-</div>
-
-<!-- 📄 SECCIÓN: GENERADOR DE DOCUMENTOS -->
-<div class="seccion">
-    <div class="fondo-seccion" id="fondo-contratos"></div>
-    <div class="capa-sombra"></div>
-    <div class="contenido-seccion">
-        <h2>Mandatos y Documentos</h2>
-        <p class="descripcion">Genera tus documentos de autorización listos para firmar y presentar ante instituciones oficiales.</p>
-        <input type="text" id="nombre" placeholder="Nombre completo del artista">
-        <input type="text" id="rut" placeholder="RUT / Cédula de identidad">
-        <button onclick="generarMandato()">Generar Documento</button>
-        <pre id="resultado-mandato"></pre>
-    </div>
-</div>
-
-</div>
-
-<script>
-// CARGAR TODAS LAS IMÁGENES AUTOMÁTICAMENTE
-cargarFondo("fondo-distribucion", galerias.distribucion[0]);
-cargarFondo("fondo-marketing", galerias.marketing[0]);
-cargarFondo("fondo-legal", galerias.legal[0]);
-cargarFondo("fondo-contratos", galerias.legal[0]);
-</script>
-
-</body>
-</html>
+    <div class="contenido-seccion"
