@@ -85,31 +85,32 @@
         .plataformas {
             display: flex;
             justify-content: center;
-            gap: 16px;
+            gap: 30px;
             margin-top: 20px;
             flex-wrap: wrap;
+            align-items: flex-start;
         }
 
-        .plataforma-icono {
-            width: 56px;
-            height: 56px;
-            background: var(--gris-oscuro);
-            border-radius: 10px;
+        .plataforma-item {
             display: flex;
+            flex-direction: column;
             align-items: center;
-            justify-content: center;
-            font-size: 24px;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.5);
-            overflow: hidden;
+            gap: 12px;
+            text-align: center;
         }
 
-        /* Asegura que todas las imágenes/SVG de iconos tengan el mismo tamaño y se vean bien */
-        .plataforma-icono img,
-        .plataforma-icono svg {
-            width: 36px;
-            height: 36px;
+        .plataforma-logo {
+            width: 120px;
+            height: auto;
             object-fit: contain;
             display: block;
+            filter: drop-shadow(0 2px 8px rgba(0,0,0,0.5));
+        }
+
+        .plataforma-nombre {
+            font-size: 0.95rem;
+            font-weight: 600;
+            color: #E0E0E0;
         }
 
         /* 📦 ESTILO DE SECCIONES */
@@ -233,9 +234,9 @@
             h2 { font-size: 1.8rem; }
             .seccion { padding: 45px 25px; min-height: 240px; }
             .logo-principal { width: 240px; }
-            .plataforma-icono { width: 48px; height: 48px; font-size: 20px; }
-            .plataforma-icono img,
-            .plataforma-icono svg { width: 28px; height: 28px; }
+            .plataformas { gap: 20px; }
+            .plataforma-logo { width: 80px; }
+            .plataforma-nombre { font-size: 0.85rem; }
         }
     </style>
 </head>
@@ -248,17 +249,34 @@
 
 <div class="contenedor">
 
-<!-- 🎯 LOGO Y ENCABEZADO -->
 <!-- 🎯 LOGO Y PLATAFORMAS -->
 <header>
     <img src="./logo-vitalink-rec.png" alt="Vitalink Record SPA" class="logo-principal">
     <div class="plataformas">
-        <div class="plataforma-icono"><img src="./icono-spotify.png" alt="Spotify"></div>
-        <div class="plataforma-icono"><img src="./icono-apple-music.png" alt="Apple Music"></div>
-        <div class="plataforma-icono"><img src="./icono-tidal.png" alt="Tidal"></div>
-        <div class="plataforma-icono"><img src="./icono-youtube-music.png" alt="YouTube Music"></div>
-        <div class="plataforma-icono"><img src="./icono-amazon-music.png" alt="Amazon Music"></div>
-        <div class="plataforma-icono"><img src="./icono-deezer.png" alt="Deezer"></div>
+        <div class="plataforma-item">
+            <img src="./logo-spotify.png" alt="Spotify" class="plataforma-logo">
+            <span class="plataforma-nombre">Spotify</span>
+        </div>
+        <div class="plataforma-item">
+            <img src="./logo-apple-music.png" alt="Apple Music" class="plataforma-logo">
+            <span class="plataforma-nombre">Apple Music</span>
+        </div>
+        <div class="plataforma-item">
+            <img src="./logo-tidal.png" alt="Tidal" class="plataforma-logo">
+            <span class="plataforma-nombre">Tidal</span>
+        </div>
+        <div class="plataforma-item">
+            <img src="./logo-youtube-music.png" alt="YouTube Music" class="plataforma-logo">
+            <span class="plataforma-nombre">YouTube Music</span>
+        </div>
+        <div class="plataforma-item">
+            <img src="./logo-amazon-music.png" alt="Amazon Music" class="plataforma-logo">
+            <span class="plataforma-nombre">Amazon Music</span>
+        </div>
+        <div class="plataforma-item">
+            <img src="./logo-deezer.png" alt="Deezer" class="plataforma-logo">
+            <span class="plataforma-nombre">Deezer</span>
+        </div>
     </div>
     <p style="color:#BFBFBF; margin-top:15px; font-size:1.1rem;">Distribución y servicios legales para artistas en Chile</p>
 </header>
