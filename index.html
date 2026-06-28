@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -17,6 +16,9 @@
             --blanco: #FFFFFF;
             --gris-oscuro: #1A1A1A;
             --gris-medio: #333333;
+            --verde-paquete: #2ecc71;
+            --amarillo-paquete: #f39c12;
+            --rojo-paquete: #e74c3c;
         }
 
         * {
@@ -34,7 +36,6 @@
             line-height: 1.6;
         }
 
-        /* 🎨 FONDO GENERAL */
         .fondo-principal {
             position: fixed;
             top: 0;
@@ -54,19 +55,20 @@
             z-index: 2;
         }
 
-        /* 🖼️ BANNER PRINCIPAL */
         .banner-principal {
             display: block;
-            width: 100%;
-            max-height: 350px;
-            object-fit: cover;
-            border-radius: 14px;
+            width: 100vw;
+            max-width: 100vw;
+            height: auto;
+            margin-left: calc(50% - 50vw);
+            margin-right: calc(50% - 50vw);
+            object-fit: contain;
+            border-radius: 12px;
             margin-bottom: 40px;
-            box-shadow: 0 6px 20px rgba(0,0,0,0.7);
-            border: 1px solid rgba(255, 213, 0, 0.15);
+            box-shadow: none;
+            border: 1px solid rgba(0,0,0,0.45);
         }
 
-        /* 🎯 ENCABEZADO CON LOGO */
         header {
             text-align: center;
             padding: 20px 20px 50px;
@@ -74,13 +76,12 @@
         }
 
         .logo-principal {
-            width: 280px;
+            width: 320px;
             height: auto;
             margin-bottom: 25px;
             filter: drop-shadow(0 0 12px rgba(255, 213, 0, 0.35));
         }
 
-        /* ✅ ICONOS MÁS GRANDES */
         .plataformas {
             display: flex;
             justify-content: center;
@@ -117,7 +118,6 @@
             color: #E0E0E0;
         }
 
-        /* 📦 ESTILO DE SECCIONES */
         .seccion {
             position: relative;
             border-radius: 14px;
@@ -128,6 +128,7 @@
             background-color: rgba(14, 14, 14, 0.85);
             border: 1px solid rgba(255, 213, 0, 0.15);
             box-shadow: 0 6px 20px rgba(0,0,0,0.7);
+            cursor: pointer;
         }
 
         .fondo-seccion {
@@ -155,7 +156,7 @@
         .contenido-seccion {
             position: relative;
             z-index: 3;
-            max-width: 700px;
+            max-width: 900px;
         }
 
         h2 {
@@ -173,19 +174,79 @@
             margin-bottom: 28px;
         }
 
-        .precio {
-            font-size: 1.5rem;
-            font-weight: 700;
-            color: var(--amarillo-vitalink);
-            margin-bottom: 16px;
-        }
-
         .formas-pago {
             font-size: 1.05rem;
             color: #BFBFBF;
         }
 
-        /* 📄 FORMULARIO Y BOTONES */
+        .paquetes-distribucion {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s ease;
+            margin-top: 0;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+        }
+
+        .seccion:hover .paquetes-distribucion {
+            max-height: 750px;
+            margin-top: 30px;
+        }
+
+        .paquete {
+            background: rgba(255,255,255,0.07);
+            border-radius: 10px;
+            padding: 28px 22px;
+            text-align: center;
+            border: 1px solid rgba(255,255,255,0.12);
+            transition: transform 0.2s ease;
+        }
+
+        .paquete:hover {
+            transform: translateY(-4px);
+        }
+
+        .paquete.basico { border-color: var(--verde-paquete); }
+        .paquete.premium { border-color: var(--amarillo-paquete); }
+        .paquete.vip { border-color: var(--rojo-paquete); }
+
+        .paquete h3 {
+            font-size: 1.35rem;
+            margin-bottom: 18px;
+        }
+        .paquete.basico h3 { color: var(--verde-paquete); }
+        .paquete.premium h3 { color: var(--amarillo-paquete); }
+        .paquete.vip h3 { color: var(--rojo-paquete); }
+
+        .paquete .precio-paquete {
+            font-size: 1.7rem;
+            font-weight: bold;
+            margin: 20px 0;
+            color: #fff;
+        }
+
+        .paquete ul {
+            list-style: none;
+            font-size: 0.98rem;
+            color: #ddd;
+            text-align: left;
+            padding-left: 12px;
+        }
+
+        .paquete ul li {
+            margin: 9px 0;
+            display: flex;
+            align-items: flex-start;
+            gap: 8px;
+        }
+
+        .paquete ul li::before {
+            content: "✓";
+            color: var(--amarillo-vitalink);
+            font-weight: bold;
+        }
+
         input, button {
             margin-top: 12px;
             padding: 13px 16px;
@@ -232,27 +293,26 @@
             font-size: 0.95rem;
         }
 
-        /* 📱 ADAPTACIÓN A CELULAR */
         @media (max-width: 768px) {
-            .banner-principal { max-height: 220px; }
+            .banner-principal { max-height: 220px; border-radius: 8px; }
             h2 { font-size: 1.8rem; }
             .seccion { padding: 45px 25px; min-height: 240px; }
-            .logo-principal { width: 220px; }
+            .logo-principal { width: 240px; }
             .plataformas { gap: 20px; }
             .plataforma-logo { width: 55px; height: 55px; }
             .plataforma-nombre { font-size: 0.9rem; }
+            .paquetes-distribucion { grid-template-columns: 1fr; }
         }
     </style>
 </head>
 <body>
 
 <div class="fondo-principal"></div>
-<div class="contenedor">
 
-<!-- 🖼️ BANNER PRINCIPAL -->
 <img src="banner-principal.jpg" alt="Vitalink Record SPA" class="banner-principal">
 
-<!-- 🎯 LOGO Y PLATAFORMAS -->
+<div class="contenedor">
+
 <header>
     <img src="logo-vitalink-rec.png" alt="Vitalink Record SPA" class="logo-principal">
     <div class="plataformas">
@@ -285,20 +345,17 @@
 </header>
 
 <script>
-// 📁 RUTAS DE IMÁGENES
 const galerias = {
     distribucion: ["fondo-distribucion.jpg"],
     marketing: ["fondo-marketing.jpg"],
     legal: ["fondo-legal.jpg"]
 };
 
-// 🌀 CARGAR IMÁGENES DE FONDO
 function cargarFondo(id, archivo) {
     const elemento = document.getElementById(id);
     if (elemento) elemento.style.backgroundImage = `url('${archivo}')`;
 }
 
-// 📄 GENERADOR DE MANDATO LEGAL
 function generarMandato() {
     const nombre = document.getElementById('nombre').value.trim();
     const rut = document.getElementById('rut').value.trim();
@@ -316,7 +373,7 @@ VITALINK RECORD SPA
 RUT: 78.434.227-1
 Domicilio: Parral, Región del Biobío
 
-El otorgante autoriza expresamente a Vitalink Record SPA para realizar todos los trámites de inscripción de obras, seudónimos, marcas y derechos ante CRIN-DDI, INAPI, SCD y plataformas de distribución musical. Los montos cobrados son 100% deducibles ante el Servicio de Impuestos Internos.
+El otorgante autoriza expresamente a Vitalink Record SPA para realizar todos los trámites de inscripción de obras, seudónimos, marcas y derechos ante CRIN-DDI, INAPI, SCD y plataformas de distribución musical.
 
 _________________________          _________________________
 Firma Vitalink Record SPA               Firma del Artista`;
@@ -325,20 +382,106 @@ Firma Vitalink Record SPA               Firma del Artista`;
 }
 </script>
 
-<!-- 🎵 SECCIÓN: DISTRIBUCIÓN DIGITAL -->
-<div class="seccion">
+<!-- 🎵 DISTRIBUCIÓN DIGITAL - PRECIOS DEFINITIVOS -->
+<div class="seccion" id="distribucion">
     <div class="fondo-seccion" id="fondo-distribucion"></div>
     <div class="capa-sombra"></div>
     <div class="contenido-seccion">
         <h2>Distribución Digital</h2>
-        <p class="descripcion">Sube tu música a más de 150 plataformas: Spotify, Apple Music, YouTube Music, TikTok, Instagram y Deezer. Incluye códigos ISRC, informes detallados de regalías y soporte permanente.</p>
-        <p class="precio">$0 de entrada | Comisión 18% sobre ingresos</p>
-        <p class="formas-pago">Formas de pago: Descuento de regalías • Transferencia BancoEstado</p>
+        <p class="descripcion">Sube tu música a más de 150 plataformas en todo el mundo. <strong>Pago único por lanzamiento</strong>, sin cuotas anuales, sin comisiones futuras y con todos los trámites legales incluidos en Chile.</p>
+
+        <div class="paquetes-distribucion">
+            <div class="paquete basico">
+                <h3>Paquete Básico • Sencillo</h3>
+                <div class="precio-paquete">$60.000 CLP</div>
+                <ul>
+                    <li>Distribución en más de 150 plataformas digitales</li>
+                    <li>Inscripción automática en CRIN-DDI e INAPI</li>
+                    <li>Registro de fonograma en la SCD</li>
+                    <li>Revisión profesional de archivos y metadatos</li>
+                    <li>Soporte en español, atención desde Chile</li>
+                    <li>Sin comisiones, sin pagos anuales</li>
+                    <li>Formas de pago: Transferencia • Tarjeta</li>
+                </ul>
+            </div>
+
+            <div class="paquete premium">
+                <h3>Paquete Premium • EP</h3>
+                <div class="precio-paquete">$115.000 CLP</div>
+                <ul>
+                    <li>Todos los beneficios del paquete básico</li>
+                    <li>Distribución de hasta 4 canciones</li>
+                    <li>Verificación de perfil oficial en plataformas</li>
+                    <li>Soporte prioritario</li>
+                    <li>Informes detallados de reproducciones</li>
+                    <li>Revisión y corrección completa de datos</li>
+                    <li>Formas de pago: Transferencia • Tarjeta</li>
+                </ul>
+            </div>
+
+            <div class="paquete vip">
+                <h3>Paquete VIP • Álbum</h3>
+                <div class="precio-paquete">$170.000 CLP</div>
+                <ul>
+                    <li>Todos los beneficios del paquete premium</li>
+                    <li>Distribución de 5 a 15 canciones</li>
+                    <li>Registro de marca y nombre artístico en INAPI</li>
+                    <li>Asesoría personalizada y seguimiento completo</li>
+                    <li>Posicionamiento destacado en listas de reproducción</li>
+                    <li>Documentos legales listos para usar</li>
+                    <li>Formas de pago: Transferencia • Tarjeta</li>
+                </ul>
+            </div>
+        </div>
     </div>
 </div>
 
-<!-- 📢 SECCIÓN: MARKETING -->
+<!-- 📢 MARKETING Y DIFUSIÓN -->
 <div class="seccion">
     <div class="fondo-seccion" id="fondo-marketing"></div>
     <div class="capa-sombra"></div>
-    <div class="contenido-seccion"
+    <div class="contenido-seccion">
+        <h2>Marketing y Difusión</h2>
+        <p class="descripcion">Impulsa tu música con estrategias diseñadas para aumentar tus reproducciones, seguidores y presencia en redes sociales.</p>
+        <p class="precio">Desde $45.000 CLP por campaña</p>
+        <p class="formas-pago">Formas de pago: Transferencia • Tarjeta</p>
+    </div>
+</div>
+
+<!-- 🛡️ PROTECCIÓN LEGAL -->
+<div class="seccion">
+    <div class="fondo-seccion" id="fondo-legal"></div>
+    <div class="capa-sombra"></div>
+    <div class="contenido-seccion">
+        <h2>Protección Legal</h2>
+        <p class="descripcion">Resguarda tus creaciones: registra tu nombre artístico, obras y fonogramas ante las instituciones oficiales de Chile.</p>
+        <p class="precio">Desde $30.500 CLP por trámite</p>
+        <p class="formas-pago">Formas de pago: Transferencia • Tarjeta</p>
+    </div>
+</div>
+
+<!-- 📄 DOCUMENTOS Y MANDATOS -->
+<div class="seccion">
+    <div class="fondo-seccion" id="fondo-contratos"></div>
+    <div class="capa-sombra"></div>
+    <div class="contenido-seccion">
+        <h2>Mandatos y Documentos</h2>
+        <p class="descripcion">Genera tus documentos de autorización listos para firmar y presentar ante instituciones oficiales y plataformas digitales.</p>
+        <input type="text" id="nombre" placeholder="Nombre completo del artista">
+        <input type="text" id="rut" placeholder="RUT / Cédula de identidad">
+        <button onclick="generarMandato()">Generar Documento</button>
+        <pre id="resultado-mandato"></pre>
+    </div>
+</div>
+
+</div>
+
+<script>
+cargarFondo("fondo-distribucion", galerias.distribucion[0]);
+cargarFondo("fondo-marketing", galerias.marketing[0]);
+cargarFondo("fondo-legal", galerias.legal[0]);
+cargarFondo("fondo-contratos", galerias.legal[0]);
+</script>
+
+</body>
+</html>
