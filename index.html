@@ -179,7 +179,7 @@
             color: #BFBFBF;
         }
 
-        .paquetes-distribucion {
+        .paquetes {
             max-height: 0;
             overflow: hidden;
             transition: max-height 0.4s ease;
@@ -189,8 +189,8 @@
             gap: 25px;
         }
 
-        .seccion:hover .paquetes-distribucion {
-            max-height: 750px;
+        .seccion:hover .paquetes {
+            max-height: 850px;
             margin-top: 30px;
         }
 
@@ -301,7 +301,7 @@
             .plataformas { gap: 20px; }
             .plataforma-logo { width: 55px; height: 55px; }
             .plataforma-nombre { font-size: 0.9rem; }
-            .paquetes-distribucion { grid-template-columns: 1fr; }
+            .paquetes { grid-template-columns: 1fr; }
         }
     </style>
 </head>
@@ -348,7 +348,8 @@
 const galerias = {
     distribucion: ["fondo-distribucion.jpg"],
     marketing: ["fondo-marketing.jpg"],
-    legal: ["fondo-legal.jpg"]
+    legal: ["fondo-legal.jpg"],
+    documentos: ["fondo-documentos.jpg"]
 };
 
 function cargarFondo(id, archivo) {
@@ -382,7 +383,7 @@ Firma Vitalink Record SPA               Firma del Artista`;
 }
 </script>
 
-<!-- 🎵 DISTRIBUCIÓN DIGITAL - PRECIOS DEFINITIVOS -->
+<!-- 🎵 DISTRIBUCIÓN DIGITAL -->
 <div class="seccion" id="distribucion">
     <div class="fondo-seccion" id="fondo-distribucion"></div>
     <div class="capa-sombra"></div>
@@ -390,7 +391,7 @@ Firma Vitalink Record SPA               Firma del Artista`;
         <h2>Distribución Digital</h2>
         <p class="descripcion">Sube tu música a más de 150 plataformas en todo el mundo. <strong>Pago único por lanzamiento</strong>, sin cuotas anuales, sin comisiones futuras y con todos los trámites legales incluidos en Chile.</p>
 
-        <div class="paquetes-distribucion">
+        <div class="paquetes">
             <div class="paquete basico">
                 <h3>Paquete Básico • Sencillo</h3>
                 <div class="precio-paquete">$60.000 CLP</div>
@@ -437,36 +438,160 @@ Firma Vitalink Record SPA               Firma del Artista`;
 </div>
 
 <!-- 📢 MARKETING Y DIFUSIÓN -->
-<div class="seccion">
+<div class="seccion" id="marketing">
     <div class="fondo-seccion" id="fondo-marketing"></div>
     <div class="capa-sombra"></div>
     <div class="contenido-seccion">
         <h2>Marketing y Difusión</h2>
-        <p class="descripcion">Impulsa tu música con estrategias diseñadas para aumentar tus reproducciones, seguidores y presencia en redes sociales.</p>
-        <p class="precio">Desde $45.000 CLP por campaña</p>
-        <p class="formas-pago">Formas de pago: Transferencia • Tarjeta</p>
+        <p class="descripcion">Impulsa tu música con estrategias diseñadas para aumentar tus reproducciones, seguidores y presencia en redes sociales y medios.</p>
+
+        <div class="paquetes">
+            <div class="paquete basico">
+                <h3>Paquete Básico</h3>
+                <div class="precio-paquete">$45.000 CLP</div>
+                <ul>
+                    <li>Difusión en Instagram, Facebook y TikTok</li>
+                    <li>Publicación en blogs y medios locales</li>
+                    <li>Estadísticas básicas de alcance</li>
+                    <li>Diseño simple de imagen promocional</li>
+                    <li>Duración de la campaña: 15 días</li>
+                    <li>Formas de pago: Transferencia • Tarjeta</li>
+                </ul>
+            </div>
+
+            <div class="paquete premium">
+                <h3>Paquete Premium</h3>
+                <div class="precio-paquete">$85.000 CLP</div>
+                <ul>
+                    <li>Todo lo del paquete básico</li>
+                    <li>Campaña segmentada por público y región</li>
+                    <li>Inclusión en listas de reproducción locales</li>
+                    <li>Diseño gráfico profesional completo</li>
+                    <li>Informe detallado de resultados</li>
+                    <li>Duración de la campaña: 30 días</li>
+                    <li>Formas de pago: Transferencia • Tarjeta</li>
+                </ul>
+            </div>
+
+            <div class="paquete vip">
+                <h3>Paquete VIP</h3>
+                <div class="precio-paquete">$135.000 CLP</div>
+                <ul>
+                    <li>Todo lo del paquete premium</li>
+                    <li>Estrategia integral de lanzamiento</li>
+                    <li>Gestión de perfiles en plataformas</li>
+                    <li>Entrevistas y difusión en radios chilenas</li>
+                    <li>Acompañamiento personalizado</li>
+                    <li>Duración de la campaña: 45 días</li>
+                    <li>Formas de pago: Transferencia • Tarjeta</li>
+                </ul>
+            </div>
+        </div>
     </div>
 </div>
 
 <!-- 🛡️ PROTECCIÓN LEGAL -->
-<div class="seccion">
+<div class="seccion" id="legal">
     <div class="fondo-seccion" id="fondo-legal"></div>
     <div class="capa-sombra"></div>
     <div class="contenido-seccion">
         <h2>Protección Legal</h2>
-        <p class="descripcion">Resguarda tus creaciones: registra tu nombre artístico, obras y fonogramas ante las instituciones oficiales de Chile.</p>
-        <p class="precio">Desde $30.500 CLP por trámite</p>
-        <p class="formas-pago">Formas de pago: Transferencia • Tarjeta</p>
+        <p class="descripcion">Resguarda tus creaciones y derechos ante las instituciones oficiales de Chile. Trámites seguros y reconocidos.</p>
+
+        <div class="paquetes">
+            <div class="paquete basico">
+                <h3>Paquete Básico</h3>
+                <div class="precio-paquete">$32.000 CLP</div>
+                <ul>
+                    <li>Registro de nombre artístico en CRIN-DDI</li>
+                    <li>Asesoría básica sobre derechos de autor</li>
+                    <li>Revisión de documentos simples</li>
+                    <li>Emisión de comprobante de trámite</li>
+                    <li>Plazo de gestión: 7 a 10 días hábiles</li>
+                    <li>Formas de pago: Transferencia • Tarjeta</li>
+                </ul>
+            </div>
+
+            <div class="paquete premium">
+                <h3>Paquete Premium</h3>
+                <div class="precio-paquete">$58.000 CLP</div>
+                <ul>
+                    <li>Todo lo del paquete básico</li>
+                    <li>Inscripción de fonograma en la SCD</li>
+                    <li>Registro oficial de obra musical</li>
+                    <li>Certificados de inscripción vigentes</li>
+                    <li>Plazo de gestión: 12 a 15 días hábiles</li>
+                    <li>Formas de pago: Transferencia • Tarjeta</li>
+                </ul>
+            </div>
+
+            <div class="paquete vip">
+                <h3>Paquete VIP</h3>
+                <div class="precio-paquete">$92.000 CLP</div>
+                <ul>
+                    <li>Todo lo del paquete premium</li>
+                    <li>Registro de marca en INAPI</li>
+                    <li>Redacción de contratos estándar</li>
+                    <li>Representación ante instituciones</li>
+                    <li>Plazo de gestión: 20 a 25 días hábiles</li>
+                    <li>Formas de pago: Transferencia • Tarjeta</li>
+                </ul>
+            </div>
+        </div>
     </div>
 </div>
 
-<!-- 📄 DOCUMENTOS Y MANDATOS -->
-<div class="seccion">
-    <div class="fondo-seccion" id="fondo-contratos"></div>
+<!-- 📄 MANDATOS Y DOCUMENTOS -->
+<div class="seccion" id="documentos">
+    <div class="fondo-seccion" id="fondo-documentos"></div>
     <div class="capa-sombra"></div>
     <div class="contenido-seccion">
         <h2>Mandatos y Documentos</h2>
-        <p class="descripcion">Genera tus documentos de autorización listos para firmar y presentar ante instituciones oficiales y plataformas digitales.</p>
+        <p class="descripcion">Documentos redactados según normativa chilena, listos para firmar y presentar ante plataformas o entidades oficiales.</p>
+
+        <div class="paquetes">
+            <div class="paquete basico">
+                <h3>Paquete Básico</h3>
+                <div class="precio-paquete">$18.000 CLP</div>
+                <ul>
+                    <li>Mandato simple de representación</li>
+                    <li>Autorización para distribución digital</li>
+                    <li>Formato estándar legal</li>
+                    <li>Entrega en PDF editable</li>
+                    <li>Entrega inmediata tras aprobación</li>
+                    <li>Formas de pago: Transferencia • Tarjeta</li>
+                </ul>
+            </div>
+
+            <div class="paquete premium">
+                <h3>Paquete Premium</h3>
+                <div class="precio-paquete">$35.000 CLP</div>
+                <ul>
+                    <li>Todo lo del paquete básico</li>
+                    <li>Contrato de cesión de derechos</li>
+                    <li>Autorización de uso de imagen y voz</li>
+                    <li>Revisión y ajuste personalizado</li>
+                    <li>Entrega inmediata tras aprobación</li>
+                    <li>Formas de pago: Transferencia • Tarjeta</li>
+                </ul>
+            </div>
+
+            <div class="paquete vip">
+                <h3>Paquete VIP</h3>
+                <div class="precio-paquete">$55.000 CLP</div>
+                <ul>
+                    <li>Todo lo del paquete premium</li>
+                    <li>Contrato de colaboración artística</li>
+                    <li>Poder amplio para trámites oficiales</li>
+                    <li>Asesoría legal sobre el documento</li>
+                    <li>Entrega inmediata tras aprobación</li>
+                    <li>Formas de pago: Transferencia • Tarjeta</li>
+                </ul>
+            </div>
+        </div>
+
+        <br>
+        <h3 style="color: var(--amarillo-vitalink); margin-top:20px;">Generador de Mandato Simple</h3>
         <input type="text" id="nombre" placeholder="Nombre completo del artista">
         <input type="text" id="rut" placeholder="RUT / Cédula de identidad">
         <button onclick="generarMandato()">Generar Documento</button>
@@ -480,7 +605,7 @@ Firma Vitalink Record SPA               Firma del Artista`;
 cargarFondo("fondo-distribucion", galerias.distribucion[0]);
 cargarFondo("fondo-marketing", galerias.marketing[0]);
 cargarFondo("fondo-legal", galerias.legal[0]);
-cargarFondo("fondo-contratos", galerias.legal[0]);
+cargarFondo("fondo-documentos", galerias.documentos[0]);
 </script>
 
 </body>
